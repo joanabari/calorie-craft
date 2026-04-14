@@ -4,7 +4,7 @@ CalorieCraft is an AI-powered meal planning web application that generates a per
 
 ## Live Demo
 
-[View the live site here](https://joanabari.github.io/calorie-craft)
+[View the live site here](https://github.com/joanabari/calorie-craft)
 
 ## Features
 
