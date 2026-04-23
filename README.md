@@ -30,10 +30,22 @@ CalorieCraft is an AI-powered meal planning web application that generates a per
 - GitHub Copilot: Assisted with writing JavaScript functions
 
 ## Challenges Faced
-
+Splitting a daily calorie target across 3 meals while picking from a fixed database often missed the goal by 200–400 kcal.
+Diet filters (vegan, gluten-free) shrank the meal pool, causing repeats across the week.
+No backend meant saved plans and theme had to survive reloads on their own.
+Form inputs like negative or huge calorie values broke the generator.
+The 7-day grid overflowed on mobile.
 
 ## Solutions
+Used a 25/35/40% calorie split with weighted randomness to keep totals within ~5% of target.
+Pre-filtered meals by diet tag and sampled without replacement so meals don't repeat back-to-back.
+Stored current plan, saved plans, and theme in localStorage under namespaced keys.
 
 
 ## Future Improvements
+Integrate a real recipe API (Spoonacular/Edamam) for live recipes and photos.
+Add user accounts so plans sync across devices.
+Let users set macro targets (protein/carbs/fat), not just calories.
+Add allergen exclusions and a printable/exportable grocery list.
+Drag-and-drop meal swapping with live calorie recalculation.
 
