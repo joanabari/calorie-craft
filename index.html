@@ -3,90 +3,199 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CalorieCraft — Weekly Meal Plans for Your Calorie Goal</title>
-  <meta name="description" content="CalorieCraft generates a personalized 7-day meal plan with macros and a grocery list, tailored to your daily calorie target." />
+  <title>CalorieCraft — AI-Powered Weekly Meal Planner</title>
+  <meta name="description" content="Generate a personalized 7-day meal plan tailored to your calorie goal. Simple, beautiful, and built to keep you on track." />
   <meta name="author" content="CalorieCraft" />
+  <link rel="canonical" href="/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
 
-  <meta property="og:title" content="CalorieCraft — Weekly Meal Plans, Crafted to Your Calorie Goal" />
-  <meta property="og:description" content="Generate a personalized 7-day meal plan with macros and a grocery list." />
+  <link rel="stylesheet" href="styles.css" />
+
+  <meta property="og:title" content="CalorieCraft — AI-Powered Weekly Meal Planner" />
+  <meta property="og:description" content="Personalized 7-day meal plans based on your calorie goal." />
   <meta property="og:type" content="website" />
 </head>
 <body>
-  <!-- ========== HEADER / NAVIGATION ========== -->
+  <!-- ============ HEADER / NAV ============ -->
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="#home" class="brand" data-nav="home">
-        <span class="brand-mark">◐</span>
-        <span class="brand-name">CalorieCraft</span>
+    <nav class="container nav">
+      <a href="#home" class="logo" data-nav>
+        <span class="logo-mark" aria-hidden="true">🥗</span>
+        <span class="logo-text">Calorie<span class="grad-text">Craft</span></span>
       </a>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="#home" class="nav-link active" data-nav="home">Home</a>
-        <a href="#planner" class="nav-link" data-nav="planner">Planner</a>
-        <a href="#results" class="nav-link" data-nav="results">Results</a>
-        <a href="#grocery" class="nav-link" data-nav="grocery">Grocery</a>
-      </nav>
-      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-    </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" data-nav class="nav-link active">Home</a></li>
+        <li><a href="#planner" data-nav class="nav-link">Planner</a></li>
+        <li><a href="#results" data-nav class="nav-link">Results</a></li>
+        <li><a href="#saved" data-nav class="nav-link">Saved</a></li>
+      </ul>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode">🌙</button>
+    </nav>
   </header>
 
   <main>
-    <!-- ========== HOME ========== -->
-    <section id="home" class="view active">
-      <div class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <span class="eyebrow">Crafted weekly meal plans</span>
-            <h1 class="display">Eat well. <em>Hit your calories.</em> Effortlessly.</h1>
-            <p class="lead">CalorieCraft builds a personalized 7-day meal plan with macros and a grocery list — tailored to your daily calorie target.</p>
-            <div class="cta-row">
-              <a href="#planner" class="btn btn-primary" data-nav="planner">Start planning →</a>
-              <a href="#results" class="btn btn-ghost" data-nav="results">View latest plan</a>
-            </div>
-            <ul class="bullets">
-              <li>✓ Hits your calorie goal within ~60 kcal</li>
-              <li>✓ Full macro breakdown per meal & day</li>
-              <li>✓ Auto-generated grocery list</li>
-            </ul>
+    <!-- ============ HOME ============ -->
+    <section id="home" class="page active">
+      <div class="container hero">
+        <div class="hero-text">
+          <span class="pill">✨ Personalized weekly plans in seconds</span>
+          <h1 class="display">Eat with <span class="grad-text">intention.</span><br/>Lose the guesswork.</h1>
+          <p class="lead">CalorieCraft builds a 7-day meal plan around your calorie goal — balanced, varied, and ready to follow. No tracking apps. No spreadsheets.</p>
+          <div class="cta-row">
+            <a href="#planner" data-nav class="btn btn-primary">Build my plan →</a>
+            <a href="#saved" data-nav class="btn btn-ghost">Saved plans</a>
           </div>
-          <div class="hero-art" aria-hidden="true">
-            <div class="card-stack">
-              <div class="float-card f1">🥗<span>Crisp Caesar</span></div>
-              <div class="float-card f2">🍳<span>Veggie Omelette</span></div>
-              <div class="float-card f3">🐟<span>Baked Salmon</span></div>
-              <div class="float-card f4">🥣<span>Berry Bowl</span></div>
-            </div>
-          </div>
+          <dl class="stats">
+            <div><dt>21+</dt><dd>Recipes</dd></div>
+            <div><dt>7</dt><dd>Days planned</dd></div>
+            <div><dt>100%</dt><dd>Yours</dd></div>
+          </dl>
+        </div>
+        <div class="hero-image">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <img src="hero-meals.jpg" alt="Vibrant healthy meal: salmon, quinoa, avocado, berries on a plate" width="1536" height="1024" />
         </div>
       </div>
 
       <div class="container features">
-        <h2 class="section-title">How it works</h2>
+        <p class="eyebrow">How it works</p>
+        <h2 class="display-md">Three steps to a calmer kitchen.</h2>
         <div class="feature-grid">
-          <article class="feature">
-            <div class="feature-num">01</div>
+          <article class="feature-card">
+            <div class="feature-icon">🎯</div>
             <h3>Set your goal</h3>
-            <p>Enter your daily calorie target — anything from 1,200 to 4,500 kcal.</p>
+            <p>Tell us your daily calorie target and dietary preference.</p>
           </article>
-          <article class="feature">
-            <div class="feature-num">02</div>
-            <h3>Generate your week</h3>
-            <p>CalorieCraft creates a full 7-day plan with breakfast, lunch, and dinner.</p>
+          <article class="feature-card">
+            <div class="feature-icon">✨</div>
+            <h3>Generate</h3>
+            <p>We craft a 7-day plan with breakfast, lunch & dinner — balanced for variety.</p>
           </article>
-          <article class="feature">
-            <div class="feature-num">03</div>
-            <h3>Shop effortlessly</h3>
-            <p>View your grocery list and get everything you need in one place.</p>
+          <article class="feature-card">
+            <div class="feature-icon">🛒</div>
+            <h3>Save & shop</h3>
+            <p>Save your favorite plans and export a shopping list automatically.</p>
           </article>
         </div>
+      </div>
+
+      <div class="container">
+        <div class="cta-card">
+          <h2 class="display-md">Ready to make eating well, easy?</h2>
+          <p>Your first plan takes under a minute. No sign-up required.</p>
+          <a href="#planner" data-nav class="btn btn-light">Start planning →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PLANNER ============ -->
+    <section id="planner" class="page">
+      <div class="container narrow">
+        <div class="page-head">
+          <span class="pill">✨ Step 1 of 2</span>
+          <h1 class="display">Tell us about your <span class="grad-text">goal</span></h1>
+          <p class="lead">We'll craft a 7-day plan around it.</p>
+        </div>
+
+        <form id="plannerForm" class="card form" novalidate>
+          <label for="calories" class="label">Daily calorie target</label>
+          <p class="hint">A typical deficit is 300–500 below maintenance. Most adults sit between 1,500 and 2,500.</p>
+
+          <div class="input-wrap">
+            <input id="calories" name="calories" type="number" inputmode="numeric" min="1000" max="5000" step="50" value="1800" placeholder="1800" />
+            <span class="input-suffix">kcal / day</span>
+          </div>
+
+          <div class="presets">
+            <button type="button" class="chip" data-preset="1500">1,500</button>
+            <button type="button" class="chip" data-preset="1800">1,800</button>
+            <button type="button" class="chip" data-preset="2000">2,000</button>
+            <button type="button" class="chip" data-preset="2500">2,500</button>
+          </div>
+
+          <p id="caloriesError" class="error" role="alert" hidden></p>
+
+          <fieldset class="diet-set">
+            <legend class="label">Dietary preference</legend>
+            <div class="diet-grid">
+              <label class="diet-option"><input type="radio" name="diet" value="any"/><span><strong>Anything</strong><em>No restrictions</em></span></label>
+              <label class="diet-option selected"><input type="radio" name="diet" value="balanced" checked/><span><strong>Balanced</strong><em>Mixed macros</em></span></label>
+              <label class="diet-option"><input type="radio" name="diet" value="high-protein"/><span><strong>High protein</strong><em>Build & recover</em></span></label>
+              <label class="diet-option"><input type="radio" name="diet" value="low-carb"/><span><strong>Low carb</strong><em>Fewer carbs</em></span></label>
+              <label class="diet-option"><input type="radio" name="diet" value="vegetarian"/><span><strong>Vegetarian</strong><em>No meat or fish</em></span></label>
+            </div>
+          </fieldset>
+
+          <button type="submit" id="generateBtn" class="btn btn-primary btn-block">✨ Generate my 7-day plan</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ RESULTS ============ -->
+    <section id="results" class="page">
+      <div class="container">
+        <div id="resultsEmpty" class="empty">
+          <h1 class="display-md">No plan yet</h1>
+          <p>Build your first weekly plan to see it here.</p>
+          <a href="#planner" data-nav class="btn btn-primary">Go to planner →</a>
+        </div>
+
+        <div id="resultsContent" hidden>
+          <header class="results-head">
+            <div>
+              <p class="eyebrow">Your weekly plan</p>
+              <h1 class="display"><span id="planCalories"></span> kcal · <span id="planDiet" class="grad-text"></span></h1>
+            </div>
+            <div class="action-row">
+              <button id="regenBtn" class="btn btn-ghost">↻ Regenerate</button>
+              <button id="saveBtn" class="btn btn-dark">🔖 Save plan</button>
+              <button id="groceryBtn" class="btn btn-fresh">🛒 Grocery list</button>
+            </div>
+          </header>
+
+          <div id="groceryPanel" class="card grocery" hidden>
+            <h2>Grocery list</h2>
+            <ul id="groceryList"></ul>
+          </div>
+
+          <div class="filter-row">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="breakfast">Breakfast</button>
+            <button class="chip" data-filter="lunch">Lunch</button>
+            <button class="chip" data-filter="dinner">Dinner</button>
+          </div>
+
+          <div id="daysGrid" class="days-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SAVED ============ -->
+    <section id="saved" class="page">
+      <div class="container">
+        <header class="page-head">
+          <p class="eyebrow">Library</p>
+          <h1 class="display">Your saved plans</h1>
+          <p class="lead">Stored locally on this device. They never leave your browser.</p>
+        </header>
+        <div id="savedList"></div>
       </div>
     </section>
   </main>
 
-  <script src="js/main.js"></script>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> CalorieCraft — eat well, live well.</p>
+      <p class="muted">Built with care. Meal data is illustrative; consult a nutritionist for medical advice.</p>
+    </div>
+  </footer>
+
+  <!-- Toast container -->
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
