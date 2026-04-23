@@ -80,4 +80,9 @@ function generateDay(target, dayName) {
     const total = b.calories + l.calories + d.calories;
     const diff = Math.abs(total - target);
     if (diff < bestDiff) {
-})();
+      bestDiff = diff;
+      best = { dayName, breakfast: b, lunch: l, dinner: d, calories: total };
+    }
+  }
+  return best;
+}
